@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Industry — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Industry</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Industry overview</h2>
+          <p>Macro drivers (GDP, inflation) and industry structure (transport mix, LCC penetration).</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <!-- Fig 5 -->
+        <div class="card" style="grid-column: span 8;">
+          <h3>Fig 5 — Real GDP growth: Vietnam vs Southeast Asia</h3>
+          <p class="sub">Historical + forecast series used in the report narrative.</p>
+          <div class="chart-wrap tall">
+            <canvas id="gdpLine"></canvas>
+          </div>
+        </div>
+
+        <!-- Fig 6 -->
+        <div class="card" style="grid-column: span 4;">
+          <h3>Fig 6 — Tourists by nationality</h3>
+          <p class="sub">Inbound mix snapshot (share %).</p>
+          <div class="chart-wrap tall">
+            <canvas id="touristsPie"></canvas>
+          </div>
+        </div>
+
+        <!-- Fig 11 -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 11 — Inflation: Vietnam vs United States</h3>
+          <p class="sub">Macro stability context for discount rates and cost pressures.</p>
+          <div class="chart-wrap">
+            <canvas id="inflationLine"></canvas>
+          </div>
+        </div>
+
+        <!-- Fig 10 -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 10 — Global LCC market share trend</h3>
+          <p class="sub">LCCs gained share globally (2015–2020).</p>
+          <div class="chart-wrap">
+            <canvas id="lccLine"></canvas>
+          </div>
+        </div>
+
+        <!-- Fig 8 -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 8 — Transport mode shares (1995–2020)</h3>
+          <p class="sub">Aviation share rises long-term, with a visible COVID-era shock in 2020.</p>
+          <div class="chart-wrap tall">
+            <canvas id="transportLine"></canvas>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>How this connects to VietJet</h3>
+          <p class="sub">
+            GDP growth and rising aviation penetration support demand, while inflation and macro volatility feed into fuel/FX costs and investors’
+            required returns.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  xml
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> <!-- [web:94] -->
+  <script type="module" src="assets/js/charts-industry.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Competitive — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Competitive</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Competitive positioning</h2>
+          <p>Porter’s Five Forces summary + market share context.</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <!-- Five forces radar -->
+        <div class="card" style="grid-column: span 7;">
+          <h3>Fig 14 — Porter’s Five Forces (qualitative)</h3>
+          <p class="sub">Scale: 1 (low) → 5 (high). Scoring derived from the report’s narrative.</p>
+          <div class="chart-wrap tall">
+            <canvas id="fiveForcesRadar"></canvas>
+          </div>
+          <div class="footer-note" id="forceNote"></div>
+        </div>
+
+        <!-- Market share pies (reuse Fig 12 & Fig 13) -->
+        <div class="card" style="grid-column: span 5;">
+          <h3>Domestic share: then vs now</h3>
+          <p class="sub">Competitive context using your two share snapshots.</p>
+          <div class="chart-wrap short"><canvas id="share2021"></canvas></div>
+          <div style="height:12px;"></div>
+          <div class="chart-wrap short"><canvas id="shareH12022"></canvas></div>
+        </div>
+
+        <!-- Force text (cards) -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Force-by-force notes (from report)</h3>
+          <p class="sub">Short, recruiter-friendly bullets matching the write-up.</p>
+
+          <div class="grid" style="gap:12px; margin-top:8px;">
+            <div class="card" style="grid-column: span 4; min-height:unset;">
+              <h3>Supplier power (High)</h3>
+              <ul class="sub" style="margin:0; padding-left:16px;">
+                <li id="sup1"></li><li id="sup2"></li><li id="sup3"></li>
+              </ul>
+            </div>
+            <div class="card" style="grid-column: span 4; min-height:unset;">
+              <h3>Buyer power (Low)</h3>
+              <ul class="sub" style="margin:0; padding-left:16px;">
+                <li id="buy1"></li><li id="buy2"></li><li id="buy3"></li>
+              </ul>
+            </div>
+            <div class="card" style="grid-column: span 4; min-height:unset;">
+              <h3>Threat of entrants (Low–Moderate)</h3>
+              <ul class="sub" style="margin:0; padding-left:16px;">
+                <li id="ent1"></li><li id="ent2"></li><li id="ent3"></li>
+              </ul>
+            </div>
+
+            <div class="card" style="grid-column: span 6; min-height:unset;">
+              <h3>Threat of substitutes (Low)</h3>
+              <ul class="sub" style="margin:0; padding-left:16px;">
+                <li id="sub1"></li><li id="sub2"></li>
+              </ul>
+            </div>
+            <div class="card" style="grid-column: span 6; min-height:unset;">
+              <h3>Rivalry intensity (High)</h3>
+              <ul class="sub" style="margin:0; padding-left:16px;">
+                <li id="riv1"></li><li id="riv2"></li><li id="riv3"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>Key takeaway</h3>
+          <p class="sub">
+            The report’s conclusion emphasizes that rivalry among existing players is the main force to manage,
+            while other forces may rise but are less immediately threatening.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  xml
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> <!-- [web:94] -->
+  <script type="module" src="assets/js/charts-competitive.js"></script>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Appendices — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Appendices</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Appendices</h2>
+          <p>All appendix tables + one-click CSV downloads.</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <h3>Downloads</h3>
+          <p class="sub">Export tables to CSV for audit/reuse.</p>
+          <div class="btn-row">
+            <button class="btn" id="downloadAll">Download all tables (combined CSV)</button>
+          </div>
+          <div class="footer-note">Tip: individual tables also have their own Download button.</div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>Appendix tables</h3>
+          <div class="accordion" id="appendixAccordion"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module" src="assets/js/appendices.js"></script>
+</body>
+</html>

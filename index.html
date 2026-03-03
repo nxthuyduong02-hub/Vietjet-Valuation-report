@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>VietJet (VJC) — Equity Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>Dashboard (portfolio)</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home" class="active">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Dashboard hub</h2>
+          <p>Open any section; all pages share the same navigation and styling.</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <h3>How to use</h3>
+          <p class="sub">Start at Overview, then go deeper into Business → Financials → Valuation → Evaluation.</p>
+          <div class="kpi-row">
+            <a class="kpi" href="overview.html">
+              <div class="label">Start here</div>
+              <div class="value">Overview</div>
+              <div class="delta">Key charts + recommendation snapshot</div>
+            </a>
+            <a class="kpi" href="valuation.html">
+              <div class="label">Core model</div>
+              <div class="value">Valuation</div>
+              <div class="delta">Forecast drivers + DCF table</div>
+            </a>
+            <a class="kpi" href="evaluation.html">
+              <div class="label">Decision layer</div>
+              <div class="value">Evaluation</div>
+              <div class="delta">Sensitivity heatmaps + scenarios</div>
+            </a>
+          </div>
+
+          <div class="footer-note">
+            Theme: VietJet accents (red/yellow). Charts powered by Chart.js CDN.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script type="module">
+    import { renderTopRibbon, setActiveNav } from "./assets/js/common.js";
+    renderTopRibbon();
+    setActiveNav("home");
+  </script>
+</body>
+</html>

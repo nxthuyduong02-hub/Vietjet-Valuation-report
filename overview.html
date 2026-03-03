@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Overview — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Overview</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Overview</h2>
+          <p>Recommendation snapshot, market share context, and trend view.</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <h3>Recommendation</h3>
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="label">Current price</div>
+              <div class="value" id="kpiCurrent"></div>
+              <div class="delta">As of 07/12/2022</div>
+            </div>
+            <div class="kpi">
+              <div class="label">Target price</div>
+              <div class="value" id="kpiTarget"></div>
+              <div class="delta up" id="kpiUpside"></div>
+            </div>
+            <div class="kpi">
+              <div class="label">Valuation mix</div>
+              <div class="value" id="kpiMix"></div>
+              <div class="delta">DCF + Relative P/E</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Domestic market share (2021)</h3>
+          <p class="sub">Then: market share snapshot (pie).</p>
+          <div class="chart-wrap short"><canvas id="share2021"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Domestic capacity share (1H2022)</h3>
+          <p class="sub">Now: VietJet leads with 43%.</p>
+          <div class="chart-wrap short"><canvas id="shareH12022"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>Domestic market share trend (2016–2021)</h3>
+          <p class="sub">VietJet vs Vietnam Airlines vs other players.</p>
+          <div class="chart-wrap tall"><canvas id="shareTrend"></canvas></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Chart.js CDN -->
+  xml
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> <!-- [web:94] -->
+  <script type="module" src="assets/js/charts-overview.js"></script>
+</body>
+</html>

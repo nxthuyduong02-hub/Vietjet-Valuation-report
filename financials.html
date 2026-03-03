@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financials — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Financials</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Financial analysis (peer comparison)</h2>
+          <p>Revenue growth, cost metrics, margins, efficiency, working capital, leverage, and ROE.</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <div class="card" style="grid-column: span 12;">
+          <h3>How to read</h3>
+          <p class="sub">
+            Peer lines are shown for 2017–2021; “Industry Median” is highlighted where provided.
+            Values are taken directly from your report tables.
+          </p>
+        </div>
+
+        <div class="card" style="grid-column: span 8;">
+          <h3>Fig 16 — Peers revenue growth</h3>
+          <div class="chart-wrap tall"><canvas id="revGrowth"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 4;">
+          <h3>Fig 18 — Cargo revenue growth</h3>
+          <div class="chart-wrap tall"><canvas id="cargoGrowth"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 17 — Cost metrics (Fuel/ASK, CASK ex-fuel, CASK)</h3>
+          <p class="sub">Stacked bars = Fuel/ASK + CASK ex-fuel; line = total CASK.</p>
+          <div class="chart-wrap tall"><canvas id="costMetrics"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 19 — Gross margin (peers)</h3>
+          <div class="chart-wrap"><canvas id="gpm"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 20 — Operating margin (peers)</h3>
+          <div class="chart-wrap"><canvas id="opm"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 22 — Inventory turnover</h3>
+          <div class="chart-wrap"><canvas id="invTurn"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 23 — Total asset turnover</h3>
+          <div class="chart-wrap"><canvas id="assetTurn"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 24 — Accounts payable turnover</h3>
+          <p class="sub">Jin Air is missing in the report table (rendered as gaps).</p>
+          <div class="chart-wrap"><canvas id="apTurn"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 25 — Accounts receivable turnover</h3>
+          <div class="chart-wrap"><canvas id="arTurn"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 26 — Cash conversion cycle (CCC)</h3>
+          <div class="chart-wrap tall"><canvas id="ccc"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 27 — Asset/Equity</h3>
+          <div class="chart-wrap"><canvas id="ae"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 28 — Debt/Equity</h3>
+          <div class="chart-wrap"><canvas id="de"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 29 — ROE (DuPont)</h3>
+          <div class="chart-wrap tall"><canvas id="roe"></canvas></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  xml
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> <!-- [web:94] -->
+  <script type="module" src="assets/js/charts-financials.js"></script>
+</body>
+</html>

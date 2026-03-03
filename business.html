@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Business — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Business</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Business description</h2>
+          <p>Business model, revenue mix, and route network (2016–2021).</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <!-- KPI / Business model summary -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Business model (LCC) — quick facts</h3>
+          <p class="sub">
+            VietJet operates as a low-cost carrier with diversified revenue: core aviation services (domestic, international, ancillary)
+            plus non-core streams (e.g., aircraft sales & leaseback).
+          </p>
+
+          <div class="kpi-row">
+            <div class="kpi">
+              <div class="label">Routes (H1/2022, from report)</div>
+              <div class="value">158</div>
+              <div class="delta">52 domestic, 106 international</div>
+            </div>
+            <div class="kpi">
+              <div class="label">What “Core revenue” means</div>
+              <div class="value">Aviation services</div>
+              <div class="delta">Domestic + International + Ancillary</div>
+            </div>
+            <div class="kpi">
+              <div class="label">What “Non-core” captures</div>
+              <div class="value">Sales & Lease</div>
+              <div class="delta">SLB-related and other non-flight revenue</div>
+            </div>
+          </div>
+
+          <div class="footer-note">
+            Charts below use your report datasets (Figures 2–4) and render as interactive Chart.js visuals. 
+          </div>
+        </div>
+
+        <!-- Fig 2 -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 2 — Revenue breakdown (share of total revenue)</h3>
+          <p class="sub">Stacked columns show how mix shifted across domestic, international, ancillary, and non-core revenue.</p>
+          <div class="chart-wrap tall">
+            <canvas id="revBreakdown"></canvas>
+          </div>
+        </div>
+
+        <!-- Fig 3 + Fig 4 -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 3 — Core revenue breakdown (share)</h3>
+          <p class="sub">Core = Domestic + International + Ancillary.</p>
+          <div class="chart-wrap">
+            <canvas id="coreBreakdown"></canvas>
+          </div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 4 — Routes: domestic vs international</h3>
+          <p class="sub">Route expansion provides context for the revenue mix shifts.</p>
+          <div class="chart-wrap">
+            <canvas id="routesBar"></canvas>
+          </div>
+        </div>
+
+        <!-- Small interpretation block -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Interpretation (how to read these charts)</h3>
+          <p class="sub">
+            A higher “Non-core revenue” share often reflects aircraft sales/lease activities, while “Ancillary” captures add-on services
+            and cargo-related revenue; “International” becomes highly sensitive to border restrictions.
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Chart.js CDN -->
+  xml
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> <!-- [web:94] -->
+  <script type="module" src="assets/js/charts-business.js"></script>
+</body>
+</html>

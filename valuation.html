@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Valuation — VietJet Valuation Dashboard</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-badge"></div>
+        <div>
+          <h1>VietJet Valuation</h1>
+          <small>VJC — Valuation</small>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html" data-nav="home">Home <span class="tag">Hub</span></a>
+        <a href="overview.html" data-nav="overview">Overview <span class="tag">01</span></a>
+        <a href="business.html" data-nav="business">Business <span class="tag">02</span></a>
+        <a href="industry.html" data-nav="industry">Industry <span class="tag">03</span></a>
+        <a href="competitive.html" data-nav="competitive">Competitive <span class="tag">04</span></a>
+        <a href="financials.html" data-nav="financials">Financials <span class="tag">05</span></a>
+        <a href="valuation.html" data-nav="valuation">Valuation <span class="tag">06</span></a>
+        <a href="evaluation.html" data-nav="evaluation">Evaluation <span class="tag">07</span></a>
+        <a href="appendices.html" data-nav="appendices">Appendices <span class="tag">08</span></a>
+      </nav>
+    </aside>
+
+    <main class="main">
+      <div class="topbar" id="topRibbon"></div>
+
+      <div class="page-title">
+        <div>
+          <h2>Valuation workspace</h2>
+          <p>Forecast drivers + DCF (FCFE) engine + Relative P/E cross-check.</p>
+        </div>
+      </div>
+
+      <section class="grid">
+        <!-- Forecast: Total revenue -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 42 — Total revenue projection + growth</h3>
+          <p class="sub">Bars: revenue (VND). Line: YoY growth (%).</p>
+          <div class="chart-wrap tall"><canvas id="totalRevenue"></canvas></div>
+        </div>
+
+        <!-- Domestic + International -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 35 — Domestic transportation revenue</h3>
+          <p class="sub">Bars: revenue (trillion VND). Line: growth (%).</p>
+          <div class="chart-wrap"><canvas id="domesticRevenue"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 38 — International transportation revenue</h3>
+          <p class="sub">Bars: revenue (VND). Line: growth (%).</p>
+          <div class="chart-wrap"><canvas id="intlRevenue"></canvas></div>
+        </div>
+
+        <!-- Ancillary + Cargo -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 41 — Ancillary revenue (ex-cargo)</h3>
+          <p class="sub">Bars: revenue (trillion VND). Line: growth (%).</p>
+          <div class="chart-wrap"><canvas id="ancillary"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 39 — Cargo revenue</h3>
+          <p class="sub">Bars: revenue (trillion VND). Line: growth (%).</p>
+          <div class="chart-wrap"><canvas id="cargo"></canvas></div>
+        </div>
+
+        <!-- Margins -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 44 — Margin projection</h3>
+          <p class="sub">Operating, gross, and net profit margins (%).</p>
+          <div class="chart-wrap tall"><canvas id="margins"></canvas></div>
+        </div>
+
+        <!-- CAPEX & WC -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 45 — Net CAPEX</h3>
+          <p class="sub">(Trillion VND)</p>
+          <div class="chart-wrap"><canvas id="capex"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 46 — Change in working capital</h3>
+          <p class="sub">(Trillion VND)</p>
+          <div class="chart-wrap"><canvas id="wc"></canvas></div>
+        </div>
+
+        <!-- Net debt -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Fig 47 — Net debt and debt-to-asset ratio</h3>
+          <p class="sub">Bars: net debt (trillion VND). Line: debt-to-asset (%).</p>
+          <div class="chart-wrap tall"><canvas id="netDebt"></canvas></div>
+        </div>
+
+        <!-- Share & macro drivers -->
+        <div class="card" style="grid-column: span 4;">
+          <h3>Fig 32 — GDP growth used in model</h3>
+          <div class="chart-wrap"><canvas id="gdpModel"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 4;">
+          <h3>Fig 33 — Air share in transport market</h3>
+          <div class="chart-wrap"><canvas id="airShare"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 4;">
+          <h3>Fig 34 — VJC market share projection</h3>
+          <div class="chart-wrap"><canvas id="vjcShare"></canvas></div>
+        </div>
+
+        <!-- Routes + fleet -->
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 36 — Routes in operation projection</h3>
+          <div class="chart-wrap"><canvas id="routesProj"></canvas></div>
+        </div>
+
+        <div class="card" style="grid-column: span 6;">
+          <h3>Fig 37 — Fleet size projection</h3>
+          <div class="chart-wrap"><canvas id="fleetProj"></canvas></div>
+        </div>
+
+        <!-- DCF table -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Table 6 — DCF model (FCFE) calculation (million VND)</h3>
+          <p class="sub">Scrollable table; key output: equity value and price per share.</p>
+          <div style="max-height: 420px; overflow:auto; border-radius:12px;">
+            <table class="table" id="dcfTable"></table>
+          </div>
+          <div class="footer-note" id="dcfSummary"></div>
+        </div>
+
+        <!-- P/E table -->
+        <div class="card" style="grid-column: span 12;">
+          <h3>Table 7 — Relative P/E method (2023 price)</h3>
+          <div style="max-height: 340px; overflow:auto; border-radius:12px;">
+            <table class="table" id="peTable"></table>
+          </div>
+          <div class="footer-note" id="peSummary"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  xml
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.0/dist/chart.umd.min.js"></script> <!-- [web:94] -->
+  <script type="module" src="assets/js/charts-valuation.js"></script>
+</body>
+</html>
